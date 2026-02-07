@@ -1,0 +1,291 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 30px 20px 200px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+.container.blur {
+  filter: blur(5px);
+}
+
+h1 {
+  color: #ff4d88;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.queen-image {
+  width: 150px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.cat-image {
+  width: 100px;
+  height: auto;
+  margin: 15px 0;
+}
+
+.square-box {
+  width: 400px;
+  height: 400px;
+  border: 3px solid #ff4d88;
+  border-radius: 15px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(255, 77, 136, 0.2);
+}
+
+h2 {
+  color: #ff4d88;
+  font-size: 1.8rem;
+  margin: 0 0 15px 0;
+}
+
+.me-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+#response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d88;
+  margin-top: 20px;
+  min-height: 30px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 50px 40px;
+  border: 3px solid #ff4d88;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(255, 77, 136, 0.4);
+  animation: popIn 0.4s ease;
+}
+
+.modal-content p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff4d88;
+  margin: 0;
+}
+
+.catdance-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.proceed-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: #ff4d88;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.proceed-btn:hover {
+  background: #ff1a75;
+  transform: scale(1.05);
+}
+
+.please-popup {
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+  animation: popIn 0.3s ease-out;
+}
+
+.please-popup.show {
+  display: block;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.please-image {
+  width: 120px;
+  height: auto;
+}
+
+.please-text {
+  color: #ff4d88;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  background: #ff4d88;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  background: #ff1a75;
+  transform: scale(1.05);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .square-box {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    min-height: 300px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 15px;
+  }
+
+  .queen-image {
+    width: 120px;
+  }
+
+  .cat-image {
+    width: 80px;
+  }
+
+  .me-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin: 8px 0;
+  }
+
+  .button-group {
+    gap: 10px;
+  }
+
+  button {
+    flex: 1;
+    min-width: 120px;
+    max-width: 150px;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .please-image {
+    width: 80px;
+  }
+
+  .please-text {
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    padding: 40px 30px;
+    margin: 20px;
+  }
+
+  .modal-content p {
+    font-size: 1.5rem;
+  }
+
+  .catdance-image {
+    width: 150px;
+  }
+
+  .proceed-btn {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
